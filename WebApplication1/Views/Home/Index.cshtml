@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .login-container {
+        min-height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #f3f6fa;
+        border-radius: 20px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 40px;
+        background: #fff;
+        border: 1px solid #e5eaf0;
+        border-radius: 20px;
+        box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .login-logo {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        border-radius: 14px;
+        background: #104f38;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .login-card h1 {
+        margin-bottom: 8px;
+        color: #172b23;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .login-subtitle {
+        margin-bottom: 28px;
+        color: #697586;
+    }
+
+    .login-card .form-label {
+        color: #344054;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .login-card .form-control {
+        min-height: 48px;
+        border: 1px solid #d0d5dd;
+        border-radius: 10px;
+        padding: 12px 14px;
+    }
+
+    .login-card .form-control:focus {
+        border-color: #187550;
+        box-shadow: 0 0 0 3px rgba(24, 117, 80, 0.15);
+    }
+
+    .login-options {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    .login-button {
+        width: 100%;
+        min-height: 48px;
+        border: none;
+        border-radius: 10px;
+        background: #104f38;
+        color: white;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+
+    .login-button:hover {
+        background: #0b3b29;
+    }
+
+    .login-button:focus-visible {
+        outline: 3px solid #83c9a8;
+        outline-offset: 3px;
+    }
+
+    .login-footer {
+        margin: 24px 0 0;
+        color: #697586;
+        text-align: center;
+        font-size: 13px;
+    }
+</style>
+
+<div class="login-container">
+    <section class="login-card" aria-labelledby="login-heading">
+        <div class="login-logo" aria-hidden="true">W</div>
+
+        <h1 id="login-heading">Welcome back</h1>
+        <p class="login-subtitle">Sign in to access your account.</p>
+
+        <form onsubmit="event.preventDefault(); document.getElementById('login-message').textContent = 'This is a design preview. Sign-in is not connected yet.';">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="you@company.com"
+                       autocomplete="username"
+                       required />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       class="form-control"
+                       placeholder="Enter your password"
+                       autocomplete="current-password"
+                       required />
+            </div>
+
+            <div class="login-options">
+                <div class="form-check">
+                    <input type="checkbox"
+                           id="rememberMe"
+                           name="rememberMe"
+                           class="form-check-input" />
+                    <label for="rememberMe" class="form-check-label">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="login-button">Sign in</button>
+
+            <p id="login-message"
+               class="mt-3 mb-0 text-muted small"
+               role="status"></p>
+        </form>
+
+        <p class="login-footer">Your workspace, all in one place.</p>
+    </section>
+</div>
